@@ -1,0 +1,46 @@
+#     ___   __             _ __  __      
+#    / _ | / ___ _________(_/ /_/ /___ __
+#   / __ |/ / _ `/ __/ __/ / __/ __/ // /
+#  /_/ |_/_/\_,_/\__/_/ /_/\__/\__/\_, / 
+#                                 /___/                                                                                                                           
+
+import:
+  - ~/.config/alacritty/dracula.yml
+
+# Window settings.
+window:
+  dynamic_padding: true
+
+  padding:
+     x: 7
+     y: 5
+  
+  scrolling:
+    history: 10000
+    multiplier: 3
+
+# Font configuration.
+# Fonts are taken from the output of "fc-list : family style".
+font:
+  size: 10
+
+  normal:
+    family: Source Code Pro
+    style: Regular
+
+  bold:
+    family: Source Code Pro
+    style: Bold
+
+  italic:
+    family: Source Code Pro
+    style: Medium
+
+  offset:
+    x: 0
+    y: 0
+
+  glyph_offset:
+    x: 0
+    y: 0
+
