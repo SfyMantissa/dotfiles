@@ -34,13 +34,13 @@ Print
 # media keys
 
 XF86AudioMute
-  ~/repos/scripts/pactl_wrapper.sh "3 toggle"
+  ~/repos/scripts/pactl_wrapper.sh 3 toggle
 
 XF86AudioLowerVolume
-  ~/repos/scripts/pactl_wrapper.sh "3 -5%"
+  ~/repos/scripts/pactl_wrapper.sh 3 -5%
 
 XF86AudioRaiseVolume
-  ~/repos/scripts/pactl_wrapper.sh "3 +5%"
+  ~/repos/scripts/pactl_wrapper.sh 3 +5%
 
 XF86MonBrightnessDown
   brightnessctl s 5%-
