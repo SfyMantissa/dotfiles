@@ -1,4 +1,4 @@
-# My dotfiles :)
+# My dotfiles ❤️
 
 The essential foundation of my workspace and day-to-day activites 💻
 
@@ -17,5 +17,3 @@ Includes:
 ```
 
 I try to keep my configs hand-written, minimal, and functional 💫
-
-**Note: Rofi config needs a good polish.**
