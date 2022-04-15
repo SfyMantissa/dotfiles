@@ -82,6 +82,7 @@ if [[ -z "$SSH_CLIENT" && -z "$SSH_TTY" ]]; then
 
     # Other aliases.
     alias screenkey='screenkey -p fixed -g 50%x5%+48%-10%'
+    alias ix="curl -F 'f:1=<-' ix.io"
 
 fi
 
