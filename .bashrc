@@ -46,25 +46,25 @@ alias la='ls -A'
 alias lh='ls -lh'
 
 # General environment variables.
-HISTCONTROL=ignoreboth                                  # Don't put duplicate lines or lines starting with space in the history.
-HISTSIZE=                                               # Lines of commands stored in memory.
-HISTFILESIZE=                                           # Lines of commands allowed at startup and stored in the history file.
-HISTTIMEFORMAT="%F %T "                                 # Set timestamp format for history entries.
-EDITOR=vim                                              # Set the preferred text editor.
-TERM=xterm-256color                                     # Support 256 colors in XTerm.
-D='\[\033[38;5;7m\]'                                    # Default color.
-C='\[\033[38;5;193m\]'                                  # Remote (SSH) machine prompt custom color.
-PS1="\u$C@\h: \$(path) ❱❱$D "                           # Custom prompt.
-PS2=''                                                  # No annoying arrows with multiline commands.
+HISTCONTROL=ignoreboth                                 # Don't put duplicate lines or lines starting with space in the history.
+HISTSIZE=                                              # Lines of commands stored in memory.
+HISTFILESIZE=                                          # Lines of commands allowed at startup and stored in the history file.
+HISTTIMEFORMAT="%F %T "                                # Set timestamp format for history entries.
+EDITOR=vim                                             # Set the preferred text editor.
+TERM=xterm-256color                                    # Support 256 colors in XTerm.
+D='\[\033[38;5;7m\]'                                   # Default color.
+C='\[\033[38;5;193m\]'                                 # Remote (SSH) machine prompt custom color.
+PS1="\u$C@\h: \$(path) ❱❱$D "                          # Custom prompt.
+PS2=''                                                 # No annoying arrows with multiline commands.
 
 # Shell options.
-shopt -s histappend                                     # Append to the history file instead of overwriting it.
-shopt -s checkwinsize                                   # Dynamically update LINES and COLUMNS depending on window size.
-shopt -s globstar                                       # Use "**" to "match all" in a pathname expansion.
-shopt -s cmdhist                                        # Save multi-line command as a single entry in history.
-shopt -s dotglob                                        # Include dotfiles when globbing files and directories.
-shopt -s extglob                                        # Enable extended globbing features.
-shopt -s lithist                                        # Store multi-line commands with newlines in history.
+shopt -s histappend                                    # Append to the history file instead of overwriting it.
+shopt -s checkwinsize                                  # Dynamically update LINES and COLUMNS depending on window size.
+shopt -s globstar                                      # Use "**" to "match all" in a pathname expansion.
+shopt -s cmdhist                                       # Save multi-line command as a single entry in history.
+shopt -s dotglob                                       # Include dotfiles when globbing files and directories.
+shopt -s extglob                                       # Enable extended globbing features.
+shopt -s lithist                                       # Store multi-line commands with newlines in history.
 
 # Commands to be executed only on local machine.
 if [[ -z "$SSH_CLIENT" && -z "$SSH_TTY" ]]; then
@@ -75,10 +75,10 @@ if [[ -z "$SSH_CLIENT" && -z "$SSH_TTY" ]]; then
     fi
 
     # Local machine only environment variables.
-    PATH=$PATH:$HOME/repos/scripts:$HOME/.local/bin     # Update the PATH variable.
-    BROWSER=firefox                                     # Set the preferred web browser.
-    C='\[\033[38;5;99m\]'                               # Local machine prompt custom color.
-    PS1="\u@\h: $C\$(path) ❱❱$D "                       # Custom prompt.
+    PATH=$PATH:$HOME/repos/scripts:$HOME/.local/bin    # Update the PATH variable.
+    BROWSER=firefox                                    # Set the preferred web browser.
+    C='\[\033[38;5;99m\]'                              # Local machine prompt custom color.
+    PS1="\u@\h: $C\$(path) ❱❱$D "                      # Custom prompt.
 
     # Other aliases.
     alias screenkey='screenkey -p fixed -g 50%x5%+48%-10%'
