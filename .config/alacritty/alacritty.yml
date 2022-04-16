@@ -4,6 +4,7 @@
 #  /_/ |_/_/\_,_/\__/_/ /_/\__/\__/\_, / 
 #                                 /___/                                                                                                                           
 
+# Import custom theme.
 import:
   - ~/.config/alacritty/dracula.yml
 
