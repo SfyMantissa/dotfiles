@@ -8,7 +8,7 @@
 
 # Launch auxillary applications.
 pgrep -x sxhkd > /dev/null || sxhkd &
-pgrep -x polybar > /dev/null || polybar main &
+pgrep -x polybar > /dev/null || polybar sfy &
 
 # Initialize workspaces.
 bspc monitor -d 1 2 3 4 5

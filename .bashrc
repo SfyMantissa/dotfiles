@@ -75,7 +75,7 @@ if [[ -z "$SSH_CLIENT" && -z "$SSH_TTY" ]]; then
     fi
 
     # Local machine only environment variables.
-    PATH=$PATH:$HOME/repos/scripts:$HOME/.local/bin    # Update the PATH variable.
+    PATH=$PATH:$HOME/repos:$HOME/.local/bin            # Update the PATH variable.
     BROWSER=firefox                                    # Set the preferred web browser.
     C='\[\033[38;5;99m\]'                              # Local machine prompt custom color.
     PS1="\u@\h: $C\$(path) ❱❱$D "                      # Custom prompt.
