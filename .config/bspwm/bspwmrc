@@ -26,7 +26,7 @@ bspc config gapless_monocle          true
 bspc rule -a firefox desktop=1 follow=on
 bspc rule -a TelegramDesktop desktop=4 follow=on
 bspc rule -a discord desktop=5 follow=on
-bspc rule -a Pycalendar.py state=floating rectangle=300x300
+bspc rule -a Pycalendar.py state=floating rectangle=400x200+1404+64
 
 # Makes it so that a "normal" cursor is displayed even when not placed on windows.
 xsetroot -cursor_name left_ptr &

@@ -31,6 +31,10 @@ super + a
 Print
   flameshot gui
 
+# calendar
+super + c
+  ~/repos/polybar-calendar-simplified/calendar.sh
+
 # media keys
 
 XF86AudioMute
