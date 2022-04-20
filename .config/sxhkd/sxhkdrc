@@ -25,7 +25,7 @@ super + d
 
 # program launcher
 super + a
-	rofi -show run
+	rofi -show drun
 
 # screenshot tool
 Print
@@ -69,10 +69,6 @@ super + alt + {q,r}
 # close and kill
 super + {_,shift + }w
 	bspc node -{c,k}
-
-# swap the current node and the biggest window
-super + g
-	bspc node -s biggest.window
 
 #
 # state/flags
