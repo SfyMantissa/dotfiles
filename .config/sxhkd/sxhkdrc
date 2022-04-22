@@ -33,7 +33,7 @@ Print
 
 # calendar
 super + c
-  ~/repos/polybar-calendar-simplified/calendar.sh
+  ~/repos/simple-calendar/calendar.sh
 
 # media keys
 
