@@ -8,7 +8,7 @@
 [[ $- != *i* ]] && return
 
 # Custom format of path used in my shell prompt.
-path() {
+path () {
     first_two_dirs=$(pwd | cut -d '/' -f 1-3)
     last_two_dirs=$(pwd | rev | cut -d '/' -f 1-2 | rev)
     path_wo_ftd=$(pwd | cut -d '/' -f 4-)
@@ -29,6 +29,17 @@ path() {
             echo $last_two_dirs | sed "s|^|$first_two_dirs/.../|"
         fi
     fi
+}
+
+# Custom function to use vi/vim/lvim easier.
+v () {
+  if [[ $(command -v vi) ]]; then
+    vi $@
+  elif [[ $(command -v vim) ]]; then
+    vim $@
+  else
+    $HOME/.local/bin/lvim $@
+  fi
 }
 
 # Color support aliases.
@@ -75,7 +86,6 @@ if [[ -z "$SSH_CLIENT" && -z "$SSH_TTY" ]]; then
     fi
 
     # Local machine only environment variables.
-    PATH=$PATH:$HOME/repos:$HOME/.local/bin            # Update the PATH variable.
     BROWSER=firefox                                    # Set the preferred web browser.
     C='\[\033[38;5;99m\]'                              # Local machine prompt custom color.
     PS1="\u@\h: $C\$(path) ❱❱$D "                      # Custom prompt.
