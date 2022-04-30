@@ -81,8 +81,12 @@ if [[ -z "$SSH_CLIENT" && -z "$SSH_TTY" ]]; then
     PS1="\u@\h: $C\$(path) ❱❱$D "                      # Custom prompt.
 
     # Other aliases.
-    alias screenkey='screenkey -p fixed -g 50%x5%+48%-10%'
+    alias screenkey='screenkey -p fixed -g 50%x5%+48%-10% --bg-color "#111F39" --font "Fira Code"'
     alias ix="curl -F 'f:1=<-' ix.io"
+    alias hh="npx hardhat"
+    alias nmpass="sudo grep -r '^psk=' /etc/NetworkManager/system-connections/ \
+      | cut -d '/' -f 5 \
+      | sed -e 's/.nmconnection//' -e 's/psk=//'"
 
 fi
 
