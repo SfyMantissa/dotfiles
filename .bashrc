@@ -33,12 +33,14 @@ path () {
 
 # Custom function to use vi/vim/lvim easier.
 v () {
-  if [[ $(command -v vi) ]]; then
-    vi $@
+  lvim="$HOME/.local/bin/lvim"
+
+  if [[ $(command -v $lvim) ]]; then
+    $lvim $@
   elif [[ $(command -v vim) ]]; then
     vim $@
   else
-    $HOME/.local/bin/lvim $@
+    vi $@
   fi
 }
 
