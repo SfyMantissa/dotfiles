@@ -23,7 +23,7 @@ window:
 # Font configuration.
 # Fonts are taken from the output of "fc-list : family style".
 font:
-  size: 10
+  size: 8
 
   normal:
     family: Source Code Pro
