@@ -96,6 +96,9 @@ if [[ -z "$SSH_CLIENT" && -z "$SSH_TTY" ]]; then
     alias screenkey="screenkey -p fixed -g 50%x5%+48%+8% --bg-color '#111F39' --font 'Fira Code'"
     alias ix="curl -F 'f:1=<-' ix.io"
     alias hh="npx hardhat"
+    alias solstart="git init && npm init -y \
+      && npm i --save-dev hardhat solidity-coverage dotenv @openzeppelin/contracts \
+      && npx hardhat"
     alias nmpass="sudo grep -r '^psk=' /etc/NetworkManager/system-connections/ \
       | cut -d '/' -f 5 \
       | sed -e 's/.nmconnection//' -e 's/psk=//'"
