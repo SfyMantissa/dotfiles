@@ -31,6 +31,12 @@ path () {
     fi
 }
 
+# Create and move to directory.
+cm () {
+  mkdir $1
+  cd $1
+}
+
 # Custom function to use vi/vim/lvim easier.
 v () {
   lvim="$HOME/.local/bin/lvim"
@@ -42,6 +48,19 @@ v () {
   else
     vi $@
   fi
+}
+
+# Show pixelized image preview.
+img () {
+  echo $(basename $1)
+  chafa -s 80x25 $1
+}
+
+# Check website SSL/TLS certificate.
+cert () {
+  nslookup $1
+  (openssl s_client -showcerts -servername $1 -connect $1:443 \
+    <<< "Q" | openssl x509 -text | grep -iA2 "Validity")
 }
 
 # Color support aliases.
