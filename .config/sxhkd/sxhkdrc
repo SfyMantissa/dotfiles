@@ -37,22 +37,25 @@ super + c
 
 # media keys
 
-XF86AudioMute
-  ~/repos/scripts/pactl_wrapper.sh 3 toggle
+F4
+  ~/repos/scripts/toggle_earphones.sh
 
-XF86AudioLowerVolume
-  ~/repos/scripts/pactl_wrapper.sh 3 -5%
+F1
+  pulseaudio-control togmute
 
-XF86AudioRaiseVolume
-  ~/repos/scripts/pactl_wrapper.sh 3 +5%
+F2
+  pulseaudio-control --volume-step 5 down
 
-XF86MonBrightnessDown
+F3
+  pulseaudio-control --volume-step 5 --volume-max 100 up
+
+F5
   brightnessctl s 5%-
 
-XF86MonBrightnessUp
+F6
   brightnessctl s +5%
 
-XF86Tools
+F9
   pavucontrol
 
 # make sxhkd reload its configuration files:
