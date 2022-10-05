@@ -38,13 +38,16 @@ super + c
 # media keys
 
 XF86AudioMute
-  ~/repos/scripts/pactl_wrapper.sh 3 toggle
+  pulseaudio-control togmute
 
 XF86AudioLowerVolume
-  ~/repos/scripts/pactl_wrapper.sh 3 -5%
+  pulseaudio-control --volume-step 5 down
 
 XF86AudioRaiseVolume
-  ~/repos/scripts/pactl_wrapper.sh 3 +5%
+  pulseaudio-control --volume-step 5 --volume-max 100 up
+
+XF86AudioMicMute
+  ~/repos/scripts/toggle_earphones.sh
 
 XF86MonBrightnessDown
   brightnessctl s 5%-
