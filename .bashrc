@@ -110,6 +110,7 @@ if [[ -z "$SSH_CLIENT" && -z "$SSH_TTY" ]]; then
     BROWSER=firefox                                    # Set the preferred web browser.
     C='\[\033[38;5;99m\]'                              # Local machine prompt custom color.
     PS1="\u@\h: $C\$(path) ❱❱$D "                      # Custom prompt.
+    PATH=$PATH:/home/sfy/.cargo/bin/
 
     # Other aliases.
     alias screenkey="screenkey -p fixed -g 50%x5%+48%+8% --bg-color '#111F39' --font 'Fira Code'"
