@@ -62,6 +62,10 @@ XF86Tools
 super + Escape
 	pkill -USR1 -x sxhkd
 
+# update the system
+super +shift + ctrl + alt + u
+  alacritty -e $SHELL -c 'paru -Syu --noconfirm && $SHELL'
+
 # power off the system
 super + shift + ctrl + alt + p
   poweroff
