@@ -1,3 +1,8 @@
+//             ____ 
+//   _______  / _(_)
+//  / __/ _ \/ _/ / 
+// /_/  \___/_//_/                   
+
 * {
     /* Dracula theme colour palette */
     drac-bgd: #282a36;
@@ -12,7 +17,7 @@
     drac-red: #ff5555;
     drac-yel: #f1fa8c;
 
-    font: "Fira Code 14";
+    font: "Iosevka 14";
 
     foreground: @drac-fgd;
     background-color: @drac-bgd;

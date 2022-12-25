@@ -1,0 +1,20 @@
+#             ____                     
+#   _______  / _(_)______  ___ ____ ___
+#  / __/ _ \/ _/ /___/ _ \/ _ `(_-<(_-<
+# /_/  \___/_//_/   / .__/\_,_/___/___/
+#                  /_/                 
+
+# Command for editing password entries.
+EDITOR='kitty lvim'
+
+# Color for help messages.
+help_color="#ff79c6"
+
+# Set clipboard clearance period in seconds.
+clip_clear=60
+
+# Set password length for generated passwords.
+password_length=16
+
+# Assume the last part of path to be the username.
+default_user=":filename"
