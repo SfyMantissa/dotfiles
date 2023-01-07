@@ -11,22 +11,27 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 pgrep -x polybar > /dev/null || polybar sfy &
 
 # Initialize workspaces.
-bspc monitor -d 1 2 3 4 5
+bspc monitor -d 1 2 3 4
 
-# Window render settings.
-bspc config left_padding             12
-bspc config right_padding            12
-bspc config window_gap               10  
-bspc config border_width             0
+# Window rendering settings.
+bspc config window_gap               12
+bspc config border_width             1
 bspc config split_ratio              0.50 
-bspc config focus_follows_pointer	   true
+bspc config focus_follows_pointer	 true
 bspc config gapless_monocle          true
+bspc config focused_border_color     \#bd93f9
+bspc config normal_border_color      \#251e28
 
 # Rules to display various applications in correct workspaces.
-bspc rule -a firefox desktop=1 follow=on
-bspc rule -a TelegramDesktop desktop=4 follow=on
-bspc rule -a discord desktop=5 follow=on
-bspc rule -a Pycalendar.py state=floating rectangle=400x200+1404+64
+bspc rule -a firefox desktop=2 follow=on
+bspc rule -a Chromium desktop=2 follow=on
+bspc rule -a qutebrowser desktop=2 follow=on
+
+bspc rule -a TelegramDesktop desktop=3 follow=on
+bspc rule -a discord desktop=3 follow=on
+bspc rule -a element desktop=3 follow=on
+
+bspc rule -a Pycalendar.py state=floating border=off rectangle=300x180+1435+100
 
 # Makes it so that a "normal" cursor is displayed even when not placed on windows.
 xsetroot -cursor_name left_ptr &
