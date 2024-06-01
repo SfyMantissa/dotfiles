@@ -13,7 +13,7 @@
 ####################
 
 # Custom format of path used in my shell prompt.
-function _p() {
+function __p() {
     local first_two_dirs
     local last_two_dirs
     local path_wo_ftd
@@ -35,6 +35,14 @@ function _p() {
             pwd || \
             echo "${last_two_dirs/#/"$first_two_dirs"/.../}"
     fi
+}
+
+# Current git branch if in git repo (for shell prompt).
+function __gb() {
+	git branch 2>/dev/null \
+        | grep '\*' \
+        | cut -d ' ' -f 2- \
+        | sed -e 's/^/\[\ /' -e 's/$/\]/'
 }
 
 # Create and move to directory.
@@ -85,26 +93,32 @@ fi
 #########################
 #+Environment Variables+#
 #########################
-HISTCONTROL=ignoreboth      # Don't put duplicates in the history.
-HISTSIZE=                   # Lines of commands stored in memory.
-HISTFILESIZE=               # Lines of commands stored in history (startup).
-HISTTIMEFORMAT="%F %T "     # Timestamp format for history entries.
-EDITOR=vim                  # Preferred text editor.
-D='\[\033[38;5;7m\]'        # Default color.
-C='\[\033[38;5;193m\]'      # Remote (SSH) machine prompt color.
-PS1="\u$C@\h: \$(_p) ❱❱$D " # Custom prompt.
-PS2=''                      # No annoying arrows with multiline commands.
+export EDITOR=vim       # Preferred text editor.
+
+HISTCONTROL=ignoreboth  # Don't put duplicates in the history.
+HISTSIZE=               # Lines of commands stored in memory.
+HISTFILESIZE=           # Lines of commands stored in history (startup).
+HISTTIMEFORMAT="%F %T " # Timestamp format for history entries.
+PS2=''                  # No annoying arrows with multiline commands.
+A='\[\033[38;5;146m\]'  # Pointer color.
+C='\[\033[38;5;222m\]'  # Remote (SSH) machine prompt color.
+P='\[\033[38;5;141m\]'  # Path color.
+B='\[\033[38;5;120m\]'  # Git branch color.
+D='\[\033[38;5;007m\]'  # Default color.
+
+# Custom prompt.
+PS1="${A}󰁆 ${C}[ \u@\h] ${P}[󰴠 \$(__p)] ${B}\$(__gb)${D}\n"
 
 #################
 #+Shell Options+#
 #################
-shopt -s histappend         # Append new entries to the history file.
-shopt -s checkwinsize       # Update LINES and COLUMNS on window size change.
-shopt -s globstar           # Use "**" to "match all" in a pathname expansion.
-shopt -s cmdhist            # Multi-line command as single entries in history.
-shopt -s dotglob            # Include dotfiles when globbing.
-shopt -s extglob            # Enable extended globbing features.
-shopt -s lithist            # Multi-line commands with newlines in history.
+shopt -s histappend     # Append new entries to the history file.
+shopt -s checkwinsize   # Update LINES and COLUMNS on window size change.
+shopt -s globstar       # Use "**" to "match all" in a pathname expansion.
+shopt -s cmdhist        # Multi-line command as single entries in history.
+shopt -s dotglob        # Include dotfiles when globbing.
+shopt -s extglob        # Enable extended globbing features.
+shopt -s lithist        # Multi-line commands with newlines in history.
 
 #################
 #+Local Machine+#
