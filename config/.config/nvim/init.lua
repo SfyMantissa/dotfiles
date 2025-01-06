@@ -1,3 +1,5 @@
+-- +TODO Review everything, tinker around with `nvim` configuration.
+
 -- Install Lazy package manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -12,7 +14,9 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.cmd("source ~/.vimrc")          -- Source the original vim config
+-- Source the original vim config
+vim.cmd("source ~/.vimrc")
+
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=4")
 vim.cmd("set softtabstop=4")
@@ -29,4 +33,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
-require("lazy").setup("plugins")    -- Source plugins and their configs
+-- Source plugins and their configs
+require("lazy").setup("plugins")
+
+-- Maintain the original terminal background.
+vim.cmd("hi Normal ctermbg=none guibg=none")
