@@ -3,19 +3,23 @@
 #  / _  / // / _ \(_-</ __/ __/ __/
 #  \_,_/\_,_/_//_/___/\__/_/  \__/
 
+# +TODO Change structure, tinker with the options.
 [global]
 
+    icon_position = right
+    icon_size = 48
+    icon_path = "/usr/share/icons/Papirus/64x64/apps/"
     # Notification width.
-    width = 400
+    width = 512
 
     # Notification height.
-    height = 300
+    height = 56
 
     # Origin position for notifications.
     origin = bottom-right
 
     # Offset from the origin.
-    offset = 15x15
+    offset = (4, 4)
 
     # Maximum number of notifications (0 means no limit).
     notification_limit = 2
@@ -47,13 +51,13 @@
     line_height = 0
 
     # The format of the message.
-    format = "%a\n%s\n%p%b"
+    format = "%a%s\n%b"
 
     # Alignment of message text.
     alignment = left
 
     # Vertical alignment of message text and icon.
-    vertical_alignment = center
+    vertical_alignment = top
 
     # Show age of message if message is older than show_age_threshold seconds.
     show_age_threshold = 60
