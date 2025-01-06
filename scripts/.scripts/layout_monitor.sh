@@ -1,10 +1,10 @@
 #!/bin/bash
 
-function get_layout() {
+function main() {
     local led_mask
     local layout
 
-    led_mask="$(xset -q | grep 'LED' | awk '{print $10}')"
+    led_mask="$(xset -q | awk '/LED/ {print $10}')"
 
     case "${led_mask}" in
         "00000000" | "00000002" | "00000004" | "00000006") layout='En' ;;
@@ -17,9 +17,5 @@ function get_layout() {
     echo "󰗊 ${layout}"
 }
 
-function main() {
-    get_layout
-}
-
-main "$@"
+main
 
