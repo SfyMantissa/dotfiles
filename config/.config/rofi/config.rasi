@@ -170,3 +170,10 @@ element-text, element-icon {
     text-color: inherit;
 }
 
+// +TODO Think about more options?
+configuration {
+    // Only output local `.desktop` files in `drun`, the category is set
+    // manually.
+    drun-categories: "custom";
+}
+
