@@ -12,8 +12,8 @@ Automation is done using `stow`. See provided `makefile` for details.
 
 In project directory:
 
-- `make` (re-)deploys the symlinks for files to `$HOME`
-- `make remove` removes the symlinks created by `make`
+- `make` (re-)deploys the symlinks for files to `$HOME`.
+- `make remove` removes the symlinks created by `make`.
 
 > Note: if there are any conflicts e.g. the deployment of symlinks would
 > overwrite files, which already exist, `stow` WILL fail. Resolve the
@@ -23,21 +23,46 @@ In project directory:
 
 ### NeoVim
 
-1. Inherits `.vimrc` configuration in `nvim/init.lua`.
-2. Overrides certain parts from `.vimrc` in `nvim/lua/vimrc-override.lua`.
+Inherits most of the configuration from `standalone/.vimrc`.
 
-### Polybar
+### Scripts
 
-Has a bunch of custom scripts in `polybar/scripts`, which are then used in
-`polybar/config.ini`:
+Has a bunch of custom scripts in `scripts/.scripts`, which are then used in:
 
-1. `polybar/scripts/datetime.sh`: default module lacks the needed formatting.
-2. `polybar/scripts/layout.sh`: default module lacks the needed formatting.
-3. `polybar/scripts/openvpn.sh`: `openvpn` status.
-4. `polyber/scripts/pulseaudio-control-wrapper.sh`: control wrapper for a
-   customized fork of `pulseaudio-control` (+battery level for earphones).
-5. `polybar/scripts/window.sh`: my custom replacement for
+- `config/.config/polybar/config.ini`.
+- `config/.config/sxhkd/sxhkdrc`.
+
+#### Polybar
+
+1. `scripts/.scripts/window_monitor.sh`: show current focused window class OR
+   alternative name, custom replacement for
    [MateoNitro550/xxxwindowPolybarModule](https://github.com/MateoNitro550/xxxwindowPolybarModule).
+2. `scripts/.scripts/layout_monitor.sh`: show current layout.
+3. `scripts/.scripts/volume_monitor.sh`: show current output audio volume,
+   made using a customized fork (shows Bluetooth devices) of
+   [marioortizmanero/polybar-pulseaudio-control](https://github.com/marioortizmanero/polybar-pulseaudio-control).
+   See PR (still needs additional work/fork):
+   [marioortizmanero/polybar-pulseaudio-control/pull/74](https://github.com/marioortizmanero/polybar-pulseaudio-control/pull/74).
+
+#### Sxhkd
+
+1. `scripts/.scripts/bluetoothctl_earphones_toggle.sh`: toggle Bluetooth
+   earphones.
+2. `scripts/.scripts/dunst_pause.sh`: pause `dunst` notifications.
+3. `scripts/.scripts/ffmpeg_record_toggle.sh`: record screen with audio using
+   `ffmpeg`.
+4. `scripts/.scripts/kitty_float_toggle.sh`: toggle floating `kitty` terminal
+   (**see demo below**).
+5. `scripts/.scripts/screenkey_toggle.sh`: toggle `screenkey`.
+6. `scripts/.scripts/wireguard_toggle.sh`: toggle Wireguard.
+
+#### Kitty float toggle demo
+
+Uses `bspc` interface in `bspwm` to spawn a terminal with a special window
+class. Terminal then can be triggered to appear in the same state it was
+on any desktop you want, preserving its geometry and all output.
+
+![Kitty float toggle demo](./assets/kitty_float_toggle.gif)
 
 ### Xinitrc
 
